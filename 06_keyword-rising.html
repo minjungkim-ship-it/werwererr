@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>06 · 급상승 키워드</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:transparent!important;}body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:transparent;-webkit-font-smoothing:antialiased;}
+:root{--red:#FF385C;--red-d:#D42B47;--red-l:#FFF0F3;--red-m:#FFD6DE;--bg:#fff;--bg2:#F6F7F9;--bg3:#EEEEF0;--t1:#1a1a1a;--t2:#4a4f59;--t3:#999;--border:#E5E7EC;--dark:#1C1C1E;}
+@media(prefers-color-scheme:dark){:root{--bg:#1C1C1E;--bg2:#2C2C2E;--bg3:#3A3A3C;--t1:#F2F2F7;--t2:#AEAEB2;--t3:#636366;--border:#38383A;--red-l:#2D0F18;--red-m:#4D1525;}}
+.sec-banner{display:flex;align-items:center;gap:10px;background:var(--dark);padding:14px 22px;border-radius:14px 14px 0 0;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0;}
+.lbl{font-size:18px;font-weight:900;color:var(--red);}
+.div{width:1px;height:17px;background:rgba(255,255,255,.2);margin:0 2px;}
+.ttl{font-size:15px;font-weight:700;color:#fff;}
+.card{background:var(--bg2);border-radius:0 0 14px 14px;border:1px solid var(--border);border-top:none;padding:20px 20px 16px;}
+.ic-hd{display:flex;align-items:flex-start;gap:13px;margin-bottom:14px;}
+.ic-box{width:42px;height:42px;border-radius:11px;background:var(--bg3);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.ic-lbl{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.06em;margin-bottom:3px;}
+.ic-ttl{font-size:14px;font-weight:700;color:var(--t1);}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.chip{background:var(--red-l);color:var(--red);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;border:1px solid var(--red-m);}
+.sub-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+.sub-title{font-size:13px;font-weight:700;color:var(--t1);}
+.date-bdg{font-size:11px;font-weight:600;background:var(--red-l);color:var(--red);padding:3px 10px;border-radius:7px;}
+.sub-note{font-size:12px;color:var(--t3);margin-bottom:12px;}
+/* 바 차트 */
+.ri-list{display:flex;flex-direction:column;gap:6px;}
+.ri-item{display:flex;align-items:center;gap:9px;}
+.ri-rk{font-size:12px;font-weight:700;color:var(--t3);min-width:18px;text-align:right;}
+.ri-nm{font-size:12px;font-weight:500;color:var(--t1);min-width:96px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ri-bg{flex:1;background:var(--bg3);border-radius:4px;height:9px;overflow:hidden;}
+.ri-bar{height:100%;border-radius:4px;background:var(--red);}
+.ri-bar.s{background:#FFB3C2;}
+.ri-pct{font-size:12px;font-weight:700;color:var(--red);min-width:48px;text-align:right;}
+.cta-row{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid var(--border);gap:10px;}
+.cta-hint{font-size:12px;color:var(--t3);flex:1;}
+.cta-btn{display:inline-flex;align-items:center;gap:7px;flex-shrink:0;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:9px 16px;border-radius:10px;text-decoration:none;transition:background .2s,transform .15s;white-space:nowrap;}
+.cta-btn:hover{background:var(--red-d);transform:translateY(-1px);}
+.play{width:19px;height:19px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:9px;}
+.caption{display:none;font-size:12px;color:var(--t3);margin-top:8px;text-decoration:none;transition:color .2s;}
+.caption:hover{color:var(--red);}
+@media(max-width:480px){.ri-nm{min-width:72px;font-size:11px;}.cta-row{flex-direction:column;align-items:flex-start;}.cta-btn{width:100%;justify-content:center;}}
+</style>
+</head><body>
+<div class="sec-banner"><span class="dot"></span><span class="lbl">Keyword</span><span class="div"></span><span class="ttl">급상승 키워드</span></div>
+<div class="card">
+  <div class="ic-hd">
+    <div class="ic-box">🔥</div>
+    <div>
+      <div class="ic-lbl">● Rising Keyword</div>
+      <!-- ★ DATA: 주차 -->
+      <div class="ic-ttl">2026년 6월 5주차 급상승 키워드</div>
+    </div>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="sub-hd">
+    <span class="sub-title">🚀 급상승 키워드 TOP 20</span>
+    <!-- ★ DATA: 기간 -->
+    <span class="date-bdg">2026년 6월 5주차</span>
+  </div>
+  <div class="sub-note">전주 대비 검색량 상승률 기준</div>
+  <div class="ri-list" id="riList"></div>
+  <div class="cta-row">
+    <span class="cta-hint">키워드 트렌드를 반영하여 광고 효율을 높여보세요</span>
+    <a class="cta-btn" href="https://my.a-bly.com/ad/campaigns" target="_blank">상품 추가하러 가기 <span class="play">▶</span></a>
+  </div>
+</div>
+<a class="caption" href="https://my.a-bly.com/ad/campaigns" target="_blank">https://my.a-bly.com/ad/campaigns</a>
+
+<script>
+/* ★ DATA ZONE ★ */
+const CHIPS=['테마','젤리슈즈 파츠','샤베트 말랑이','샤베트 슬랑이','젤리슈즈'];
+const R20=[
+  {n:'테마',p:289.1},{n:'젤리슈즈 파츠',p:280},{n:'샤베트 말랑이',p:278.1},
+  {n:'샤베트 슬랑이',p:239.1},{n:'젤리슈즈',p:216.1},{n:'도착보장',p:192.1},
+  {n:'운동복',p:190.6},{n:'크런치',p:190.1},{n:'능소화',p:189.9},
+  {n:'무료',p:187.6},{n:'카톡테마',p:187.5},{n:'하렘팬츠',p:172.5},
+  {n:'간식',p:167.6},{n:'나시 블라우스',p:166.5},{n:'레몬코어',p:163.6},
+  {n:'장마',p:159.1},{n:'여름 반팔',p:157.6},{n:'푸딩 슬랑이',p:157},
+  {n:'스터디플래너',p:155.9},{n:'민소매',p:155.4},
+];
+
+const ce=document.getElementById('chips');
+CHIPS.forEach(c=>{ce.innerHTML+=`<span class="chip">${c}</span>`;});
+const maxP=R20[0].p;
+const le=document.getElementById('riList');
+R20.forEach((d,i)=>{
+  const w=Math.round(d.p/maxP*100);
+  le.innerHTML+=`<div class="ri-item">
+    <span class="ri-rk">${i+1}</span>
+    <span class="ri-nm">${d.n}</span>
+    <div class="ri-bg"><div class="ri-bar${i>=3?' s':''}" style="width:${w}%"></div></div>
+    <span class="ri-pct">${d.p}%</span>
+  </div>`;
+});
+</script>
+</body></html>
